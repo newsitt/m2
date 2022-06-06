@@ -1,0 +1,64 @@
+{% extends "base.html" %} {% block title %}การแก้ไขข้อมูลบนฐานข้อมูล{% endblock %} {% block content%}
+<br>
+<div class="text-center">
+    <h2>การแก้ไขข้อมูลบนฐานข้อมูล</h2>
+</div>
+<br>
+<div class="text-center">
+    <h4>คุณกำลังแก้ไขข้อมูลของ "{{data.sector_name}}"</h4>
+</div>
+<Hr></Hr>
+<br>
+<div class="container">
+    <form action="#" method="POST">
+    <div>
+        <div>
+            <h3>ข้อมูลที่แก้ไขได้</h3>
+            <div class="form-group">
+                <label for="sectorName">ชื่อขององค์กรบริหารส่วนท้องถิ่น (อปท.)</label>
+                <input type="text" name="sectorName" id="sectorName" value="{{data.sector_name}}">
+            </div>
+            <div class="form-group">
+                <label for="sector_Type">ประเภทองค์กรปกครองส่วนท้องถิ่น (อปท.)</label>
+                <select name="sectorType" id="sectorType">
+                <option value="" disabled selected hidden>กรุณาระบุประเภทองค์กรปกครองส่วนท้องถิ่น (อปท.)</option>
+                <option value="เขตการปกครองพิเศษ">เขตการปกครองพิเศษ</option>
+                <option value="เทศบาลนคร (ทน.)">เทศบาลนคร (ทน.)</option>
+                <option value="เทศบาลเมือง (ทม.)">เทศบาลเมือง (ทม.)</option>
+                <option value="เทศบาลตำบล (ทต.)">เทศบาลตำบล (ทต.)</option>
+                <option value="องค์การบริหารส่วนตำบล (อบต.)">องค์การบริหารส่วนตำบล (อบต.)</option>
+            </select>
+            </div>
+            <div>
+                <label for="address">ที่อยู่:</label>
+                <p>{{data.address}}</p>
+            </div>
+            <div class="form-group">
+                <label for="population">จำนวนประชากร (คน) *เป็นจำนวนเต็ม</label>
+                <input type="number" step="any" class="form-control " id="population" name="population" placeholder="กรุณาระบุจำนวนประชากรในหน่วย คน" value="{{data.population}}">
+            </div>
+            <div class="form-group">
+                <label for="housing">จำนวนครัวเรือน (ครัวเรือน) *เป็นจำนวนเต็ม</label>
+                <input type="number" step="any" class="form-control " id="housing" name="housing" placeholder="กรุณาระบุจำนวนครัวเรือนในหน่วย ครัวเรือน " value="{{data.housing}}">
+            </div>
+            <div class="form-group">
+                <label for="income">รายได้เฉลี่ยของประชากร (บาท/หัว/ปี)</label>
+                <input type="number" step="any" class="form-control" id="income" name="income" placeholder="กรุณาระบุรายได้เฉลี่ยนของประชากรในหน่วย บาท/หัว/ปี " value="{{data.income}}">
+            </div>
+            <div class="form-group">
+                <label for="amount_Waste">ปริมาณขยะ (ตัน/วัน)</label>
+                <input type="number" step="any" class="form-control" id="amountWaste" name="amountWaste" placeholder="กรุณาระบุปริมาณขยะในหน่วย ตัน/วัน" value="{{data.amount_waste}}">
+            </div>
+            <div class="form-group">
+                <label for="editDate">วันที่ทำการแก้ไขข้อมูล</label>
+                <input type="date" id="editDate " name="editDate">
+            </div>
+        </div>
+        <br>
+        <div class="text-center ">
+            <button type="submit " class="btn btn-primary ">ยันยันการแก้ไขข้อมูล</button>
+        </div>
+    </div>
+</form>
+</div>
+{% endblock %}

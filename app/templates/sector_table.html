@@ -1,0 +1,54 @@
+{% extends "base.html" %} {% block title %}ข้อมูลทั้งหมดบนฐานข้อมูล{% endblock %} {% block content%}
+<br />
+<div class="text-center">
+    <h2>ข้อมูลขององค์กรบริหารส่วนท้องถิ่น (อปท.) ทั้งหมด</h2>
+</div>
+<hr/>
+<form method="POST">>
+    <div class="">
+        <table class="table">
+            <tr>
+                <th>ลำดับ</th>
+                <th>ภาค</th>
+                <th>ชื่อองค์กรบริหารส่วนท้องถิ่น</th>
+                <th>ประเภทองค์กรบริหารส่วนท้องถิ่น</th>
+                <th>ที่อยู่</th>
+                <th>ประชากร (คน)</th>
+                <th>จำนวนครัวเรือน (ครัวเรือน)</th>
+                <th>รายได้เฉลี่ยนของประชากร (บาท/หัว/ปี)</th>
+                <th>ขนาดครัวเรือน (คน/ครัวเรือน)</th>
+                <th>ปริมาณขยะ (ตัน/วัน)</th>
+                <th>อัตราการเกิดขยะ (กิโลกรัม/คน/วัน)</th>
+            </tr>
+            {% for data in all_data %}
+            <tr>
+                <td>{{ data.id }}</td>
+                <input type="hidden" name="sector_id" value="{{ data.id }}">
+                <td>{{ data.zone }}</td>
+                <input type="hidden" name="zone" value="{{ data.zone }}">
+                <td>
+                    <a href="{{ url_for('views.update_data', id=data.id) }}">{{ data.sector_name }}</a>
+                </td>
+                <input type="hidden" name="sectorName" value="{{ data.sector_name }}">
+                <td>{{ data.sector_type }}</td>
+                <input type="hidden" name="sectorType" value="{{data.sector_type}}">
+                <td>{{ data.address }}</td>
+                <input type="hidden" name="address" value="{{ data.address }}">
+                <td>{{ data.population }}</td>
+                <input type="hidden" name="population" value="{{ data.population }}">
+                <td>{{ data.housing }}</td>
+                <input type="hidden" name="housing" value="{{data.housing}}">
+                <td>{{ data.income }}</td>
+                <input type="hidden" name="income" value="{{data.id}}">
+                <td>{{ data.housing_size }}</td>
+                <input type="hidden" name="housingSize" value="{{data.housing_size}}">
+                <td>{{ data.amount_waste }}</td>
+                <input type="hidden" name="amoutWaste" value="{{data.amount_waste}}">
+                <td>{{ data.waste_rate }}</td>
+                <input type="hidden" name="wasteRate" value="{{data.waste_rate}}">
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</form>
+<br /> {% endblock %}

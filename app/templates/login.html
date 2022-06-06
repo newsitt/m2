@@ -1,0 +1,27 @@
+{% extends "base.html" %} {% block title %}เข้าสู่ระบบ{% endblock %} {% block content%}
+<div class="container text-center">
+    <img src="static/nrct-logo.png" alt="nrct logo">
+    <img src="static/hsm-logo.png" alt="hsm logo">
+</div>
+<form method="POST">
+    <div class="container">
+        <br />
+    <h3 align="center">เข้าสู่ระบบ</h3>
+    <hr />
+    <div class="form-group">
+        <label for="email">อีเมล</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="กรุณาใส่อีเมลของคุณ" />
+    </div>
+    <div class="form-group">
+        <label for="password">รหัสผ่าน</label>
+        <input type="password" class="form-control" id="password" name="password" placeholder="กรุณาใส่รหัสผ่านของคุณ" />
+    </div>
+    <br />
+    <div class="text-center">
+        <button type="submit" class="btn btn-primary">ยืนยันเพื่อเข้าสู่ระบบ</button>
+        <br>
+        <a href="/sign-up">ลงทะเบียนที่นี่</a>
+    </div>
+    </div>
+</form>
+{% endblock %}

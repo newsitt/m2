@@ -1,0 +1,48 @@
+{% extends "base.html" %} {% block title
+%}การเพิ่มข้อมูลและแก้ไขข้อมูลบนฐานข้อมูล{% endblock %} {% block content%} 
+<br />
+<div class='container'>
+  <div class='page-header'>
+  <h1 class="text-center">กรุณาเลือกรายการที่ต้องการทำ</h1>
+</div>
+</div>
+<br />
+<hr />
+<h3 class="text-center">กรุณาเลือกรายการ</h3>
+<br />
+<div id="grid" class="row text-center">
+  <div class="col-sm-6">
+    <!-- search botton -->
+    <div>
+      <a id="searcH" href="{{url_for('views.databaseTable')}}">
+        <button id="searchButton">
+          <img src="static/map.png" alt="" width="100%" height="100%" />
+        </button>
+      </a>
+    </div>
+    <br />
+    <div class="text-center">
+      <a href="{{url_for('views.databaseTable')}}" class="btn btn-info" role="button">
+        แก้ไขข้อมูลบนฐานข้อมูล
+      </a>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <!-- information button -->
+    <div>
+      <a id="addData" href="/create_data">
+        <button id="addDataButton">
+          <img src="static/working.png" alt="" width="100%" height="100%" />
+        </button>
+      </a>
+    </div>
+    <br />
+    <div class="text-center">
+      <a href="/create_data" class="btn btn-info" role="buton">
+        เพิ่มข้อมูลลงฐานข้อมูล
+      </a>
+    </div>
+  </div>
+
+  {% endblock %}
+</div>

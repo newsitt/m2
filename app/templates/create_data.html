@@ -1,0 +1,72 @@
+{% extends "base.html" %} {% block title %}การเพิ่มข้อมูลลงบนฐานข้อมูล{% endblock %} {% block content%}
+<br>
+<div class="text-center">
+    <h2>การเพิ่มข้อมูลบนฐานข้อมูล</h2>
+</div>
+<Hr></Hr>
+<br>
+<form method="POST">
+    <div class="container">
+        <div class="form-group">
+            <label for="zone">ภาค</label>
+            <select name="zone" id="zone">
+                <option value=" " disabled selected hidden>กรุณาเลือกภาค</option>
+                <option value="ภาคเหนือ ">ภาคเหนือ</option>
+                <option value="ภาคกลาง ">ภาคกลาง</option>
+                <option value="ภาคตะวันออกเฉียงเหนือ ">ภาคตะวันออกเฉียงเหนือ</option>
+                <option value="ภาคตะวันออก ">ภาคตะวันออก</option>
+                <option value="ภาคใต้ ">ภาคใต้</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="sector_Name">ชื่อองค์กรปกครองส่วนท้องถิ่น (อปท.)</label>
+            <input type="text" class="form-control " id="sectorName" name="sectorName" placeholder="กรุณาระบุชื่อองค์กรปกครองส่วนท้องถิ่น (อปท.) ">
+        </div>
+        <div class="form-group">
+            <label for="sector_Type">ประเภทองค์กรปกครองส่วนท้องถิ่น (อปท.)</label>
+            <select name="sectorType" id="sectorType">
+                <option value=" " disabled selected hidden>กรุณาเลือกประเภทองค์กรปกครองส่วนท้องถิ่น (อปท.)</option>
+                <option value="เขตการปกครองพิเศษ">เขตการปกครองพิเศษ</option>
+                <option value="เทศบาลนคร (ทน.)">เทศบาลนคร (ทน.)</option>
+                <option value="เทศบาลเมือง (ทม.)">เทศบาลเมือง (ทม.)</option>
+                <option value="เทศบาลตำบล (ทต.)">เทศบาลตำบล (ทต.)</option>
+                <option value="องค์การบริหารส่วนตำบล (อบต.)">องค์การบริหารส่วนตำบล (อบต.)</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="lat">พิกัดละติจูด</label>
+            <input type="number" step="any" class="form-control " id="lat" name="lat" placeholder="กรุณาระบุละติจูด ">
+            <label for="long">พิกัดลองติจูด</label>
+            <input type="number" step="any" class="form-control " id="long" name="long" placeholder="กรุณาระบุลองติจูด ">
+        </div>
+        <div class="form-group">
+            <label for="address">ที่อยู่</label>
+            <input type="text" class="form-control " id="address" name="address" placeholder="กรุณาระบุที่อยู่ขององค์กรปกครองส่วนท้องถิ่น (อปท.) ">
+        </div>
+        <div class="form-group">
+            <label for="population">จำนวนประชากร (คน)</label>
+            <input type="number" step="any" class="form-control " id="population" name="population" placeholder="กรุณาระบุจำนวนประชากรเป็น ">
+        </div>
+        <div class="form-group">
+            <label for="housing">จำนวนครัวเรือน (ครัวเรือน)</label>
+            <input type="number" step="any" class="form-control " id="housing" name="housing" placeholder="กรุณาระบุจำนวนครัวเรือนในหน่วย ครัวเรือน ">
+        </div>
+        <div class="form-group">
+            <label for="income">รายได้เฉลี่ยของประชากร (บาท/หัว/ปี)</label>
+            <input type="number" step="any" class="form-control" id="income" name="income" placeholder="กรุณาระบุรายได้เฉลี่ยนของประชากรในหน่วย บาท/หัว/ปี ">
+        </div>
+        <div class="form-group">
+            <label for="amount_Waste">ปริมาณขยะ (ตัน/วัน)</label>
+            <input type="number" step="any" class="form-control" id="amountWaste" name="amountWaste" placeholder="กรุณาระบุปริมาณขยะในหน่วย ตัน/วัน ">
+        </div>
+        <div class="form-group">
+            <label for="editDate">วันที่ทำการแก้ไขข้อมูล</label>
+            <input type="date" id="editDate " name="editDate" >
+        </div>
+        <br>
+        <div class="text-center ">
+            <button type="submit " class="btn btn-primary ">ยืนยันเพื่อเพิ่มข้อมูล</button>
+        </div>
+    </div>
+</form>
+{% endblock %}

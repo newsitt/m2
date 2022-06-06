@@ -1,0 +1,74 @@
+{% extends "base.html" %} {% block title %}หน้าหลัก{% endblock %} {% block content%}
+<div class="container text-center">
+<div class="container text-center align-middle">
+    <img src="static/nrct-logo.png" alt="nrct logo" width=15%" height="100%">
+    <img src="static/hsm-logo.png" alt="hsm logo" width="15%" height="100%">
+</div>
+<br>
+<div class="">
+    <h1 align="center"><b>ยินดีต้อนรับ</b></h1>
+    <h2 align="center"><b>การศึกษาปริมาณและองค์ประกอบของขยะมูลฝอยในชุมชนและสถานที่กำจัด</b></h2>
+<h4 align="center">คุณ{{ user.first_name }} {{ user.last_name }} จากหน่วยงาน {{ user.sector }}</h4>
+</div>
+<br />
+<hr />
+<h3 align="center">กรุณาเลือกรายการ</h3>
+<br />
+<div id="grid" class="row text-center">
+    <div class="col-sm-4">
+        <!-- search botton -->
+        <div>
+            <a id="searcH" href="/search">
+                <button id="searchButton">
+          <img src="static/map.png" alt="search" width="50%" height="50%" />
+        </button>
+            </a>
+        </div>
+        <br />
+        <div class="text-center">
+            <a href="/search" class="btn btn-info" role="button">
+               ฐานข้อมูลปริมาณขยะมูลฝอย
+            </a>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <!-- information button -->
+        <div>
+            <a id="informaTion" href="/database">
+                <button id="informationButton">
+          <img src="static/working.png" alt="database" width="50%" height="50%" />
+        </button>
+            </a>
+        </div>
+        <br />
+        <div class="text-center">
+            <a href="/database"class="btn btn-info" role="button">
+                เพิ่มและแก้ไขข้อมูลบนฐานข้อมูล
+            </a>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <!-- prediction button -->
+        <div>
+            <a id="predicTion" href="/prediction/">
+                <button id="predictionButton">
+          <img
+            src="static/predictive-chart.png"
+            alt="waste prediction"
+            width="50%"
+            height="50%"
+          />
+        </button>
+            </a>
+        </div>
+        <br />
+        <div class="text-center">
+            <a href="/prediction/" class="btn btn-info" role="button">
+                การคาดการณ์ปริมาณขยะ
+            </a>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
